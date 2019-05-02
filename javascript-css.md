@@ -59,3 +59,5 @@ There are two ways to traverse downwards:
 
 1. `querySelector` or `querySelectorAll`
 1. `children`
+
+## querySelector or querySelectorAll
