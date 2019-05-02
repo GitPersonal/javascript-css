@@ -64,10 +64,9 @@ There are two ways to traverse downwards:
 
 To traverse downwards from a specific element, you can use `element.querySelector` or `element.querySelectorAll`. You already know this.
 
-``html
-
+```html
 <div class="component">
-<h2 class="component__title">Component title</h2>
+  <h2 class="component__title">Component title</h2>
 </div>
 ```
 
