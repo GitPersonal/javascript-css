@@ -61,3 +61,39 @@ There are two ways to traverse downwards:
 1. `children`
 
 ## querySelector or querySelectorAll
+
+To traverse downwards from a specific element, you can use `element.querySelector` or `element.querySelectorAll`. You already know this.
+
+``html
+
+<div class="component">
+<h2 class="component__title">Component title</h2>
+</div>
+```
+
+```javascript
+const component = document.querySelector(".component");
+const title = component.querySelector(".component__title");
+console.log(title);
+```
+
+## children
+
+`children` is a property that lets you select direct descendants (element that are immediately nested in another element). It returns a HTML Collection that updates when children elements are changed.
+
+```html
+<ul class="list">
+  <li><a href="#">Link 1</a></li>
+  <li><a href="#">Link 2</a></li>
+  <li><a href="#">Link 3</a></li>
+  <li><a href="#">Link 4</a></li>
+  <li><a href="#">Link 5</a></li>
+</ul>
+```
+
+```javascript
+const list = document.querySelector(".list");
+const listItems = list.childrem;
+
+console.log(listItems);
+```
