@@ -96,3 +96,85 @@ const listItems = list.childrem;
 
 console.log(listItems);
 ```
+
+---
+
+## Selecting a specific child
+
+You cna select the nth-item in the list from both NodeLists (result from `querySelectorAll`) and HTML Collections (result from `childdren`). To do so, you use the index of the element, just like how you select a specific item from an Array.
+
+```html
+<ul class="list">
+  <li><a href="#">Link 1</a></li>
+  <li><a href="#">Link 2</a></li>
+  <li><a href="#">Link 3</a></li>
+  <li><a href="#">Link 4</a></li>
+  <li><a href="#">Link 5</a></li>
+</ul>
+```
+
+```javascript
+const listItems = document.querySelectorAll("li");
+
+const firstItem = listItmes[0];
+const secondItem = listItmes[1];
+const thirdItem = listItmes[2];
+const fourthItem = listItmes[3];
+const fifthItem = listItmes[4];
+
+console.log(firstItem);
+console.log(secondItem);
+console.log(thirdItem);
+console.log(fourthItem);
+console.log(fifthItem);
+```
+
+---
+
+## Traversing Upwards
+
+---
+
+There are two ways to traverse upwards:
+
+1. parentElement
+1. closet
+
+### parentElement
+
+`parentElement` is a property that lets you select the parent element. The parent is the element that encloses the current element.
+
+In the following HTML, `.list` is the parent element of all `<li>`. Each `</li>` is the parent element of their respective `<a>`.
+
+```css
+    <li><a href="#">Link 1</a></li>
+    <li><a href="#">Link 2</a></li>
+    <li><a href="#">Link 3</a></li>
+    <li><a href="#">Link 4</a></li>
+    <li><a href="#">Link 5</a></li>
+```
+
+```javascript
+const firstListItem = document.querySelector("li");
+const list = firstListItem.parentElement;
+
+console.log(list)``; //<ul class="list">...</ul>
+```
+
+---
+
+### closest
+
+`parentElement` is great for selecting one level upwards.
+
+To find an element that can be multiple levels above the current element, you use the `closet` element.
+
+`closet` lets you select the closest ancestor element that matches a selector. Here's the syntax.
+
+```javascript
+const closestAncestor = Element.closest(selector);
+```
+
+As you may suspect, `selector` is the same `selector` you pass to `querySelector` and `querySelectorAll`.
+
+In the following HTML, you can select `.list` from the `<a/>` effortlessly with `Element.closet`:
